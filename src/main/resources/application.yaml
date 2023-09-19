@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/Board?useSSL=false&serverTimezone=UTC
+    username: user
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # 자동으로 데이터베이스 스키마를 업데이트하도록 설정
+    show-sql: true      # JPA 실행 SQL 쿼리를 로그에 출력
+
+server:
+  port: 8081           # 웹 애플리케이션을 실행할 포트 번호
