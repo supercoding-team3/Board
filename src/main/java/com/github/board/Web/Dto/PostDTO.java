@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PostDto {
+public class PostDTO {
 
 //    게시물 데이터를 전달할 DTO 클래스 - getter와 setter 생성
 

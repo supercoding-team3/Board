@@ -1,8 +1,8 @@
 package com.github.board.Repository;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.Entity;
@@ -21,11 +21,24 @@ public class PostEntity {
     private Long memberId;
 
     public PostEntity(String title, String contents) {
+        this.title = title;
+        this.contents = contents;
     }
+
+//    public PostEntity(Long memberId,String title, String contents) {
+//        this.memberId = memberId;
+//        this.title = title;
+//        this.contents = contents;
+//    }
+
 
     public void setMemberId(Long memberId) {
         this.memberId = memberId;
     }
 
 
+    public void setContent(String new_title, String new_contents) {
+        this.title = new_title;
+        this.contents = new_contents;
+    }
 }
