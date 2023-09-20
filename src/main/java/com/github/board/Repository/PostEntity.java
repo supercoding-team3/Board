@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 @Entity
+@Getter
 @NoArgsConstructor
 public class PostEntity {
 
@@ -25,11 +26,15 @@ public class PostEntity {
         this.contents = contents;
     }
 
-//    public PostEntity(Long memberId,String title, String contents) {
-//        this.memberId = memberId;
-//        this.title = title;
-//        this.contents = contents;
-//    }
+    public PostEntity(Long memberId,String title, String contents) {
+        this.memberId = memberId;
+        this.title = title;
+        this.contents = contents;
+    }
+
+    public PostEntity(Long memberId){
+
+    }
 
 
     public void setMemberId(Long memberId) {
