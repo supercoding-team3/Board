@@ -37,6 +37,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'com.h2database:h2' // 또는 원하는 데이터베이스 의존성을 추가
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+    //jackson - json 파일로 받기 위해 설정
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.5'
 }
 
 tasks.named('test') {

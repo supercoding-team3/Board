@@ -5,6 +5,7 @@ import com.github.board.Repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,7 +28,8 @@ public class PostService {
     }
 
 
-    public String updatePost(Long postId, String newTitle, String newContent) {
+    @Transactional
+    public PostEntity updatePost(Long postId, String newTitle, String newContent) {
         // 1. 엔티티 조회
         PostEntity postToUpdate = postRepository.findById(postId).orElse(null);
 
@@ -36,7 +38,7 @@ public class PostService {
             postToUpdate.setContent(newTitle, newContent);
 
             // 3. 수정된 엔티티 저장
-            return postRepository.save(postToUpdate).toString();
+            return postRepository.save(postToUpdate);
         }
         else return null;
     }
@@ -44,4 +46,6 @@ public class PostService {
     public Optional<PostEntity> getById(Long postId){
         return postRepository.findById(postId);
     };
+
+
 }
